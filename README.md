@@ -2,6 +2,8 @@
 
 An open source alternative for the Panasonic wi-fi adapter that works locally without the cloud.
 
+This fork has the minimum temperature set to 8°C in order to enable the "8/15 mode".
+
 # Features
 
 * Control your AC locally via Home Assistant, MQTT or directly
