@@ -106,7 +106,7 @@ void PanasonicAC::update_swing_vertical(const std::string &swing) {
 
   if (this->vertical_swing_select_ != nullptr &&
       this->vertical_swing_state_.compare(this->vertical_swing_select_->current_option())) {
-     this->vertical_swing_select_->publish_state(this->vertical_swing_state_);  // Set current vertical swing position
+    this->vertical_swing_select_->publish_state(this->vertical_swing_state_);  // Set current vertical swing position
   }
 }
 
