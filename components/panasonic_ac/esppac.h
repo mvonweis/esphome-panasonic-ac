@@ -60,7 +60,7 @@ class PanasonicAC : public Component, public uart::UARTDevice, public climate::C
   switch_::Switch *mild_dry_switch_ = nullptr;                  // Switch to toggle mild dry mode on/off
   sensor::Sensor *current_temperature_sensor_ = nullptr;        // Sensor to use for current temperature where AC does not report
   sensor::Sensor *current_power_consumption_sensor_ = nullptr;  // Sensor to store current power consumption from queries
-  binary_sensor::BinarySensor *defrost_sensor_ = nullptr;       // Sensor to store defrost status
+  binary_sensor::BinarySensor *defrost_sensor_ = nullptr; // Sensor to store defrost status
 
   size_t vertical_swing_state_;
   size_t horizontal_swing_state_;
