@@ -108,10 +108,9 @@ void PanasonicAC::update_swing_horizontal(const StringRef &swing) {
   if (this->horizontal_swing_select_ != nullptr) {
     this->horizontal_swing_state_ = this->horizontal_swing_select_->index_of(swing).value_or(~0UL);
 
-  if (this->horizontal_swing_select_ != nullptr &&
-      this->horizontal_swing_state_.compare(this->horizontal_swing_select_->current_option())) {
-    this->horizontal_swing_select_->publish_state(
-        this->horizontal_swing_state_);  // Set current horizontal swing position
+    if (this->horizontal_swing_state_ != this->horizontal_swing_select_->active_index().value_or(~0UL)) {
+      this->horizontal_swing_select_->publish_state(this->horizontal_swing_state_);  // Set current horizontal swing position
+    }
   }
 }
 
@@ -119,9 +118,9 @@ void PanasonicAC::update_swing_vertical(const StringRef &swing) {
   if (this->vertical_swing_select_ != nullptr) {
     this->vertical_swing_state_ = this->vertical_swing_select_->index_of(swing).value_or(~0UL);
 
-  if (this->vertical_swing_select_ != nullptr &&
-      this->vertical_swing_state_.compare(this->vertical_swing_select_->current_option())) {
-     this->vertical_swing_select_->publish_state(this->vertical_swing_state_);  // Set current vertical swing position
+    if (this->vertical_swing_state_ != this->vertical_swing_select_->active_index().value_or(~0UL)) {
+      this->vertical_swing_select_->publish_state(this->vertical_swing_state_);  // Set current vertical swing position
+    }
   }
 }
 
