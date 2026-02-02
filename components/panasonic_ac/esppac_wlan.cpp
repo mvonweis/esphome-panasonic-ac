@@ -173,7 +173,7 @@ void PanasonicACWLAN::control(const climate::ClimateCall &call) {
     ESP_LOGV(TAG, "Requested preset change");
 
     const StringRef preset = call.get_custom_preset();
-    
+
     if (preset == "Normal") {
       set_value(0xB2, 0x41);
       set_value(0x35, 0x42);
